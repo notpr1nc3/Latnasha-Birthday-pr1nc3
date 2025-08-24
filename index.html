@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday, Latansha! 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Animated Backgrounds -->
+  <div class="floating-hearts"></div>
+  <div class="sparkle-bg"></div>
+
+  <!-- Lock Screen -->
+  <div id="lockScreen" class="lock-screen">
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+      <div>
+        <h2>Prince's Birthday 🎂</h2>
+        <div class="code-inputs labeled-inputs">
+          <div>
+            <input type="number" id="princeDay" maxlength="2" placeholder="DD">
+            <div class="input-label">Day</div>
+          </div>
+          <div>
+            <input type="number" id="princeMonth" maxlength="2" placeholder="MM">
+            <div class="input-label">Month</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2>Latansha's Birthday <span style="color:#e63995;">❤️</span></h2>
+        <div class="code-inputs labeled-inputs">
+          <div>
+            <input type="number" id="latanshaDay" maxlength="2" placeholder="DD">
+            <div class="input-label">Day</div>
+          </div>
+          <div>
+            <input type="number" id="latanshaMonth" maxlength="2" placeholder="MM">
+            <div class="input-label">Month</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button onclick="checkBothLock()">Unlock</button>
+    <div id="lockError" class="error"></div>
+  </div>
+
+  <!-- Countdown & Music -->
+  <div id="countdownScreen" class="countdown-screen hidden">
+    <audio id="bgMusic" loop>
+      <source src="love-song.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="countdown">
+      <span id="countdownNum">3</span>
+    </div>
+  </div>
+
+  <div id="butterflyContainer" class="hidden"></div>
+
+  <!-- Birthday Wish -->
+  <section id="wishSection" class="wish-section hidden">
+    <div class="birthday-message">
+      <span>🎂</span>
+      <h2>Happy Birthday, Latansha! 💖</h2>
+      <p style="white-space: pre-line; text-align:center;">
+Happpppyyyyyy Birthday jaaaannnnn ❤️❤️
+🫶🏻I loveeeee uhhhhhh sooo muchhh bbbyyy ❤️🫶🏻
+Pataa nhii perrr ❤️me kya wish kruuu , perr tuuu merii eklautii khassshh haiii ...... ❤️
+💗Me sachhh batuuu tu mere liyee ssbb khcuh hai bbbyy everything, harrr second, harr minutes tu meree liye important haii
+👀Bbbbu tu sachh me besttt haiii or humehsa raho gi.....
+🫶🏻Mhujee tere❤️sathhh Humehsa HUMESHA rehna hai ekdam khsuhi khushiii
+Mhuje tere harrr khushi harrr dhukko ke paal vi me tere sath rehna hai.....
+Thuje jaraa sa vi taklif na de pauu
+🫀I loveeee uhhh yrrrr.
+Perr sachh me bbbyy I lovee uhh soo muchhh
+❤️Aaajj tera bday haiiiiiiiiiiiii ❤️aaj ke dinn 😘bhuttt ENJOY karnaaa bhut mastii karnnaaa ....bbyyyy
+
+👀❤️Humraa safarrrrr tere innhii khushiyo ke sathh humehsa rehee 😘🫀or humehsa humehsa thuke khushh dekhuuu ❤️👀 thujee yaaad hai bbyy
+Humra 1ST MEET-UP 13 AGUST KOO ❤️😁KAISEE AAYI TIH 👀❤️merko to ekdam nayii dhulan jaiasaaa lagaaa
+❤️👀Sachh me payrii lag rahi tih
+👀❤️Tera hattt pakdnaaa tere stahh ghumnaa 
+Tere baate sunaa sab chij bbbyyy ❤️ 🫶🏻 me chataaa me fir se thujee aapne aakho se hasata huaa khelta hua masti kartaa huaaa dekhuu 
+❤️Tuu sschh me mere LIYEE SABB KHCUHH HAI BBBY❤️🫶🏻🫶🏻🫀
+meee sorrrrrrrryyy huu bbby ☹️ menee bhut barrr galtiyaan kiyaa THUJEEE persann kiyaa ☹️haii na bbuu I'm really sorry bbbyy
+Fir vi tum mere sathh hoo☹️🫀🫶🏻
+Yrr i love you yrrr ❤️🫀🫀☹️ bbby ptaa hai tum sach me khass ho bby 
+Payrr ke sath sath tum meri jindgi ho bbbyy ❤️🫶🏻
+I lovvveee uhhhh bbbbyyy
+Tumm humesha khush rehna bby
+Terii smile bhuttt payrii lagtiii
+Sachii tu jaraa sa vi smile kartii 
+Hyeeeeeeeeeeee kyaa dikhti ❤️❤️❤️🫶🏻meriii jaaannnn
+
+Bbbyyy fir se bbbuuuu Happy Birthday againn jannnnmn❤️🫶🏻🫶🏻
+      </p>
+      <div class="balloons">
+        <div class="balloon" style="background:#e63995;"></div>
+        <div class="balloon" style="background:#ffb347;"></div>
+        <div class="balloon" style="background:#77dd77;"></div>
+        <div class="balloon" style="background:#779ecb;"></div>
+        <div class="balloon" style="background:#f49ac2;"></div>
+      </div>
+      <button class="scroll-btn" onclick="scrollToMemories()">See Our Memories 📸</button>
+    </div>
+  </section>
+
+  <!-- Memories Section -->
+  <section id="memoriesSection" class="memories-section hidden">
+    <div class="memory-segment">
+      <img src="ghibli.jpg" class="memory-photo" alt="Ghibli Art">
+      <div class="memory-caption">Your favourite Ghibli art pictures</div>
+    </div>
+    <div class="memory-segment">
+      <img src="first-photo.jpg" class="memory-photo" alt="First Photo">
+      <div class="memory-caption">When I see your 1st photo</div>
+    </div>
+    <div class="memory-segment">
+      <img src="bachpan.jpg" class="memory-photo" alt="Bachpan">
+      <div class="memory-caption">Ek bachpan ki photo 👀my little bbby</div>
+    </div>
+    <div class="memory-segment">
+      <video controls width="300" class="memory-video">
+        <source src="play-together.mp4" type="video/mp4">
+      </video>
+      <div class="memory-caption">When I play 1st time with you</div>
+    </div>
+    <div class="memory-segment">
+      <img src="funny.jpg" class="memory-photo" alt="Funny">
+      <div class="memory-caption">😂ye dekho 😂kya dhikha 👀humri batee</div>
+    </div>
+    <div class="memory-segment">
+      <img src="majakk.jpg" class="memory-photo" alt="Majak">
+      <div class="memory-caption">🥲mera majak banate huee</div>
+    </div>
+    <div class="memory-segment">
+      <img src="latenight.jpg" class="memory-photo" alt="Late Night">
+      <div class="memory-caption">👀humri 1st late nyt batee</div>
+    </div>
+    <div class="memory-segment book-segment">
+      <div class="book-gallery">
+        <img src="book1.jpg" class="book-photo active" alt="Book 1" data-gallery="book1" data-index="0">
+        <img src="book2.jpg" class="book-photo" alt="Book 2" data-gallery="book1" data-index="1">
+        <img src="book3.jpg" class="book-photo" alt="Book 3" data-gallery="book1" data-index="2">
+        <button class="book-prev">&lt;</button>
+        <button class="book-next">&gt;</button>
+      </div>
+      <div class="memory-caption">❤️😚Humari payri payri batee</div>
+    </div>
+    <div class="memory-segment book-segment">
+      <div class="book-gallery">
+        <img src="draw1.jpg" class="book-photo active" alt="Drawing 1" data-gallery="drawings" data-index="0">
+        <img src="draw2.jpg" class="book-photo" alt="Drawing 2" data-gallery="drawings" data-index="1">
+        <img src="draw3.jpg" class="book-photo" alt="Drawing 3" data-gallery="drawings" data-index="2">
+        <button class="book-prev">&lt;</button>
+        <button class="book-next">&gt;</button>
+      </div>
+      <div class="memory-caption">❤️👀Humarii drawings</div>
+    </div>
+    <div class="memory-segment">
+      <img src="calltiming.jpg" class="memory-photo" alt="Call Timing">
+      <div class="memory-caption">😚❤️Humari lambii call timing</div>
+    </div>
+    <div class="memory-segment heart-segment">
+      <div class="heart-gallery">
+        <img src="serious1.jpg" class="heart-photo active" alt="Serious 1" data-gallery="serious" data-index="0">
+        <img src="serious2.jpg" class="heart-photo" alt="Serious 2" data-gallery="serious" data-index="1">
+        <img src="serious3.jpg" class="heart-photo" alt="Serious 3" data-gallery="serious" data-index="2">
+        <img src="serious4.jpg" class="heart-photo" alt="Serious 4" data-gallery="serious" data-index="3">
+        <img src="serious5.jpg" class="heart-photo" alt="Serious 5" data-gallery="serious" data-index="4">
+        <img src="serious6.jpg" class="heart-photo" alt="Serious 6" data-gallery="serious" data-index="5">
+        <button class="heart-prev">&lt;</button>
+        <button class="heart-next">&gt;</button>
+      </div>
+      <div class="memory-caption">👀Humari khuch serious or aachi bate 🌻🫶🏻</div>
+    </div>
+    <div class="memory-segment">
+      <img src="storymention.jpg" class="memory-photo" alt="Story Mention">
+      <div class="memory-caption">😚❤️Mera 1st story mention</div>
+    </div>
+    <div class="memory-segment row-gallery">
+      <img src="me.jpg" class="memory-photo" alt="Me">
+      <img src="bacha.jpg" class="memory-photo" alt="Bacha">
+      <div class="memory-caption">❤️👀me or mera bachaaaa</div>
+    </div>
+    <div class="memory-segment">
+      <video controls width="300" class="memory-video">
+        <source src="love-talk.mp4" type="video/mp4">
+      </video>
+      <div class="memory-caption">😚😁Dekho kitni payr se boltii 🫶🏻❤️</div>
+    </div>
+    <div class="memory-segment heart-segment">
+      <div class="heart-gallery">
+        <img src="meetup1.jpg" class="heart-photo active" alt="Meetup 1" data-gallery="meetup" data-index="0">
+        <img src="meetup2.jpg" class="heart-photo" alt="Meetup 2" data-gallery="meetup" data-index="1">
+        <img src="meetup3.jpg" class="heart-photo" alt="Meetup 3" data-gallery="meetup" data-index="2">
+        <img src="meetup4.jpg" class="heart-photo" alt="Meetup 4" data-gallery="meetup" data-index="3">
+        <img src="meetup5.jpg" class="heart-photo" alt="Meetup 5" data-gallery="meetup" data-index="4">
+        <img src="meetup6.jpg" class="heart-photo" alt="Meetup 6" data-gallery="meetup" data-index="5">
+        <img src="meetup7.jpg" class="heart-photo" alt="Meetup 7" data-gallery="meetup" data-index="6">
+        <img src="meetup8.jpg" class="heart-photo" alt="Meetup 8" data-gallery="meetup" data-index="7">
+        <img src="meetup9.jpg" class="heart-photo" alt="Meetup 9" data-gallery="meetup" data-index="8">
+        <button class="heart-prev">&lt;</button>
+        <button class="heart-next">&gt;</button>
+      </div>
+      <div class="memory-caption">❤️👀Our 1st meet-up and best of best movement</div>
+    </div>
+    <button class="scroll-btn" onclick="scrollToNote()">Write Me a Note 💌</button>
+  </section>
+
+  <section id="noteSection" class="note-section hidden">
+    <h2>Leave a Note for Me 💌</h2>
+    <textarea id="userNote" placeholder="Write your thoughts, wishes, or feedback here..."></textarea>
+    <button onclick="saveNote()">Send</button>
+    <div id="noteMsg"></div>
+    <button class="scroll-btn" onclick="scrollToGame()">Let's Play a Game! 🎲</button>
+  </section>
+
+  <section id="gameSection" class="game-section hidden">
+    <h2>Love Game 💘</h2>
+    <div id="gameArea">
+      <div id="gameQuestion"></div>
+      <div id="gameHearts"></div>
+      <div id="answerInput" class="hidden">
+        <label id="answerLabel"></label><br>
+        <input type="text" id="userAnswer" autocomplete="off">
+        <button onclick="submitAnswer()">Submit</button>
+      </div>
+      <div id="gameResult"></div>
+    </div>
+  </section>
+
+  <section id="summarySection" class="game-section hidden">
+    <h2>Your Answers & Feedback 💌</h2>
+    <ul id="summaryList"></ul>
+    <div id="summaryFeedback"></div>
+  </section>
+
+  <div id="fullSizeModal" class="hidden" onclick="closeFullSize()">
+    <button class="close-modal" onclick="closeFullSize(); event.stopPropagation();">&times;</button>
+    <div id="fullSizeContent"></div>
+    <button id="fullPrevBtn" class="hidden" onclick="flipFullPrev(event)">&#8592;</button>
+    <button id="fullNextBtn" class="hidden" onclick="flipFullNext(event)">&#8594;</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
